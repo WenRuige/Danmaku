@@ -1,0 +1,27 @@
+[
+  {
+    "text": "弹幕->1",
+    "color": "black",
+    "font": "italic arial,sans-serif"
+  },
+  {
+    "text": "弹幕->2",
+    "color": "blue",
+    "font": "italic arial,sans-serif"
+  },
+  {
+    "text": "弹幕->3",
+    "color": "green",
+    "font": "italic arial,sans-serif"
+  },
+  {
+    "text": "弹幕->4",
+    "color": "gray",
+    "font": "italic arial,sans-serif"
+  },
+  {
+    "text": "弹幕->5",
+    "color": "white",
+    "font": "italic arial,sans-serif"
+  }
+]
