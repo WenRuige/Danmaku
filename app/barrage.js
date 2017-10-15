@@ -1,6 +1,6 @@
 // 加载config.json   ./ -> 上级  ../ -> 上上级
 const offlineDanmu = require("../danmu.json");
-const config = {
+let config = {
     'text': '',
     'color': ''
 };
@@ -9,9 +9,9 @@ barrage = function () {
     let node = 0;  //节点
     let flag = 0;
     //初始化
-    core = function (config) {
+    core = (config) => {
         // let dom = this.getCanvas();
-        const obj = this.createObj();
+        let obj = createObj();
         addAnimationRule();
         addStyle(obj, config);
         document.getElementById("danmu").appendChild(obj);   //追加对象
@@ -47,22 +47,17 @@ barrage = function () {
         document.getElementById("danmu").removeChild(event.target);
     };
     //获取画布的大小
-    getCanvas = () => {
-        return document.getElementById("canvas").getBoundingClientRect();
-    };
+    getCanvas = () => document.getElementById("canvas").getBoundingClientRect();
     //获取弹幕
     this.getDanMu = () => {
-        loop();
-    };
-    //轮询读取弹幕
-    loop = () => {
-        let temp = offlineDanmu.pop();
-        if (temp !== undefined) {
-            core(temp);
-            flag = setTimeout("loop()", 1000);
-        } else {
-            clearTimeout(flag);
-        }
+        flag = setInterval(() => {
+            let temp = offlineDanmu.pop();
+            if (temp !== undefined) {
+                core(temp)
+            }
+            //清空
+        }, 1000)
+
     };
     //监听键盘操作
     document.getElementById('input').onkeypress = (event) => {
