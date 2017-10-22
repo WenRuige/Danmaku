@@ -5,7 +5,7 @@ const offlineDanmu = require("../danmu.json");
 barrage = function (config) {
     let node = 0;  //节点
     //初始化
-    core = () => {
+    core = (config) => {
         let obj = createObj();
         addAnimationRule();
         addStyle(obj, config);
@@ -17,7 +17,7 @@ barrage = function (config) {
     };
     addImg = () => {
         let imgNode = document.createElement('img');
-        imgNode.setAttribute('src', config.pic);
+        imgNode.setAttribute('src', config.img);
         imgNode.className += "img";
         return imgNode;
     };
@@ -30,9 +30,9 @@ barrage = function (config) {
     //长和宽应该取自适应浏览器的长和宽而不是固定的长和宽
     addStyle = (obj, config) => {
         obj.style.color = config.color;
-        obj.style.font = '';
+        obj.style.font = config.font;
         obj.innerText = config.text;
-        obj.style.top = Math.random() * window.innerHeight + 'px';
+        obj.style.top = (config.top || Math.random() * window.innerHeight) + 'px';
     };
     //添加动画规则
     addAnimationRule = () => {
@@ -47,7 +47,7 @@ barrage = function (config) {
     };
     //监听 css 动画结束,并且在结束的时候将弹幕移除
     animationend = (event) => {
-        // document.getElementById("danmu").removeChild(event.target);
+        document.getElementById("danmu").removeChild(event.target);
     };
     //获取画布的大小
     getCanvas = () => document.getElementById("canvas").getBoundingClientRect();
@@ -55,6 +55,7 @@ barrage = function (config) {
     this.getDanMu = () => {
         flag = setInterval(() => {
             temp = offlineDanmu.pop();
+            console.log(temp);
             if (temp !== undefined) {
                 core(temp)
             }
@@ -68,6 +69,7 @@ barrage = function (config) {
             let data = document.getElementById("input").value;
             if (data !== '') {
                 config.text = data;
+                console.log(config);
                 core(config);
             }
         }

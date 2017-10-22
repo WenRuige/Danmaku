@@ -1,18 +1,8 @@
-body {
-    /*margin: 0 auto;*/
-}
-
-#canvas {
-    /*width: 600px;*/
-    /*height: 500px;*/
-    /*border: 1px solid black;*/
-}
 
 .animation {
     /*linear:匀速*/
     /*位置一定是要固定的,否则会产生上下偏移现象*/
     text-align: center;
-    /*border: 2px solid #a1a1a1;*/
     padding: 10px 10px;
     background: #dddddd;
     border-radius: 25px;

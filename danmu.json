@@ -2,26 +2,31 @@
   {
     "text": "弹幕->1",
     "color": "black",
-    "font": "italic arial,sans-serif"
+    "font": "italic arial,sans-serif",
+    "top": 300
   },
   {
     "text": "弹幕->2",
     "color": "blue",
-    "font": "italic arial,sans-serif"
+    "font": "italic arial,sans-serif",
+    "top": 400
   },
   {
     "text": "弹幕->3",
     "color": "green",
-    "font": "italic arial,sans-serif"
+    "font": "italic arial,sans-serif",
+    "top": 500
   },
   {
     "text": "弹幕->4",
     "color": "gray",
-    "font": "italic arial,sans-serif"
+    "font": "italic arial,sans-serif",
+    "top": 600
   },
   {
     "text": "弹幕->5",
     "color": "white",
-    "font": "italic arial,sans-serif"
+    "font": "italic arial,sans-serif",
+    "top": 700
   }
 ]
