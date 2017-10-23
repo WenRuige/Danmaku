@@ -21,6 +21,10 @@
 }
 
 #danmu > div:hover {
-    /*border: solid 1px red;*/
     animation-play-state: paused;
+    /*background:url("http://127.0.0.1:8888/test/timg.jpeg");*/
+    /*!*opacity:0.0;*!*/
 }
+
+
+

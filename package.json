@@ -2,7 +2,7 @@
   "name": "danmu",
   "version": "1.0.0",
   "description": "danmu project",
-  "main": "index.js",
+  "main": "",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -55,13 +55,11 @@ barrage = function (config) {
     this.getDanMu = () => {
         flag = setInterval(() => {
             temp = offlineDanmu.pop();
-            console.log(temp);
             if (temp !== undefined) {
                 core(temp)
             }
             //清空
         }, 1000)
-
     };
     //监听键盘操作
     document.getElementById('input').onkeypress = (event) => {
@@ -69,9 +67,17 @@ barrage = function (config) {
             let data = document.getElementById("input").value;
             if (data !== '') {
                 config.text = data;
-                console.log(config);
                 core(config);
             }
+        }
+    };
+    //不能使用style.display="block"/"none"这样会使css重新运行
+    document.getElementById('clear').onclick = () => {
+        let opacityNum = document.getElementById("danmu").style.opacity;
+        if (opacityNum === "" || opacityNum === "1") {
+            document.getElementById("danmu").style.opacity = 0.0
+        } else {
+            document.getElementById("danmu").style.opacity = 1
         }
     };
     //调用方法
