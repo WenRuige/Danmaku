@@ -16,7 +16,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 },
-                exclude: /node_modules/ // 对于匹配的文件进行过滤，排除node_module目录下的文件
+                exclude: /node_modules/    // 对于匹配的文件进行过滤，排除node_module目录下的文件
             },
             {
                 test: /\.css$/,
